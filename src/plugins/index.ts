@@ -26,11 +26,11 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
 
 export const plugins: Plugin[] = [
   redirectsPlugin({
-    collections: ['pages', 'posts'],
+    // disable admin UI by not registering any collections with the redirects plugin
+    collections: [],
     overrides: {
-      // @ts-expect-error - This is a valid override, mapped fields don't resolve to the same type
-      fields: ({ defaultFields }) => {
-        return defaultFields.map((field) => {
+  fields: ({ defaultFields }: { defaultFields: any[] }) => {
+        return defaultFields.map((field: any) => {
           if ('name' in field && field.name === 'from') {
             return {
               ...field,
@@ -55,13 +55,15 @@ export const plugins: Plugin[] = [
     generateTitle,
     generateURL,
   }),
-  formBuilderPlugin({
+  // Attempt to prevent admin collections for forms by passing an empty collections option.
+  // The plugin typings may not expose this option, so cast to `any` to avoid TS errors.
+  (formBuilderPlugin as any)({
     fields: {
       payment: false,
     },
     formOverrides: {
-      fields: ({ defaultFields }) => {
-        return defaultFields.map((field) => {
+      fields: ({ defaultFields }: { defaultFields: any[] }) => {
+        return defaultFields.map((field: any) => {
           if ('name' in field && field.name === 'confirmationMessage') {
             return {
               ...field,
@@ -81,11 +83,12 @@ export const plugins: Plugin[] = [
       },
     },
   }),
+  // disable the admin/indexing for search collections in the admin by not listing any collections
   searchPlugin({
-    collections: ['posts'],
+    collections: [],
     beforeSync: beforeSyncWithSearch,
     searchOverrides: {
-      fields: ({ defaultFields }) => {
+      fields: ({ defaultFields }: { defaultFields: any[] }) => {
         return [...defaultFields, ...searchFields]
       },
     },

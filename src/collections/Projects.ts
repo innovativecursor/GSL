@@ -1,5 +1,5 @@
 // collections/Projects.ts
-import { CollectionConfig } from 'payload/cms';
+import type { CollectionConfig } from 'payload'
 
 export const Projects: CollectionConfig = {
   slug: 'projects',
@@ -12,9 +12,9 @@ export const Projects: CollectionConfig = {
   },
   access: {
     read: () => true, // anyone can read projects
-    create: ({ req }) => !!req.user, // only logged-in users can create
-    update: ({ req }) => !!req.user,
-    delete: ({ req }) => !!req.user,
+    create: (args: any) => !!args?.req?.user, // only logged-in users can create
+    update: (args: any) => !!args?.req?.user,
+    delete: (args: any) => !!args?.req?.user,
   },
   fields: [
     {

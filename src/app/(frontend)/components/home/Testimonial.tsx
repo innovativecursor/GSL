@@ -65,7 +65,7 @@ export const Testimonial: React.FC = () => {
           variants={fadeInUp}
           className="md:text-sm md:block hidden tracking-wide text-black"
         >
-          Don't just take our word for it. Here's what our satisfied clients across the Philippines
+          Don&apos;t just take our word for it. Here&apos;s what our satisfied clients across the Philippines
           have to <br />
           say about our construction services.
         </motion.p>
@@ -73,7 +73,7 @@ export const Testimonial: React.FC = () => {
           variants={fadeInUp}
           className="text-[10px] md:hidden block tracking-wide text-black"
         >
-          Don't just take our word for it. Here's what our satisfied clients across the Philippines
+          Don&apos;t just take our word for it. Here&apos;s what our satisfied clients across the Philippines
           have to say about our construction services.
         </motion.p>
       </motion.div>

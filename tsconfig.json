@@ -24,7 +24,6 @@
         "name": "next"
       }
     ],
-    "ignoreDeprecations": "6.0",
     "paths": {
       "@payload-config": [
         "./src/payload.config.ts"

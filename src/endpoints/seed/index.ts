@@ -47,15 +47,13 @@ export const seed = async ({
   await Promise.all(
     globals.map((global) =>
       payload.updateGlobal({
-        slug: global,
-        data: {
-          navItems: [],
-        },
-        depth: 0,
-        context: {
-          disableRevalidate: true,
-        },
-      }),
+          slug: global,
+          data: ({ navItems: [] } as any),
+          depth: 0,
+          context: {
+            disableRevalidate: true,
+          },
+        }),
     ),
   )
 

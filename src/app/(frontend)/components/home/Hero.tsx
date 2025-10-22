@@ -14,7 +14,7 @@ const Counter: React.FC<CounterProps> = ({ end, suffix = '' }) => {
   const { ref, inView } = useInView({ threshold: 0.5 })
 
   useEffect(() => {
-    let counter: NodeJS.Timer
+  let counter: ReturnType<typeof setInterval> | undefined
     if (inView) {
       let start = 0
       const duration = 1500
@@ -24,7 +24,7 @@ const Counter: React.FC<CounterProps> = ({ end, suffix = '' }) => {
         start += increment
         if (start >= end) {
           start = end
-          clearInterval(counter)
+          if (counter) clearInterval(counter as any)
         }
         setCount(Math.floor(start))
       }, 30)
@@ -32,7 +32,9 @@ const Counter: React.FC<CounterProps> = ({ end, suffix = '' }) => {
       setCount(0)
     }
 
-    return () => clearInterval(counter)
+    return () => {
+      if (counter) clearInterval(counter as any)
+    }
   }, [inView, end])
 
   return (
