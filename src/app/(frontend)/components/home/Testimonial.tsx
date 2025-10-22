@@ -9,6 +9,26 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { useTestimonial } from '../../contexts/TestimonialsContext'
 import { BASE_URL } from '../../config/baseUrl'
+import { motion } from 'framer-motion'
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+}
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+  },
+}
 
 export const Testimonial: React.FC = () => {
   const { testimonials, fetchTestimonials } = useTestimonial()
@@ -18,29 +38,47 @@ export const Testimonial: React.FC = () => {
   }, [])
 
   if (!testimonials || !Array.isArray(testimonials) || testimonials.length === 0) {
-    return <p className="text-center text-red-400 py-10">Loading testimonials...</p>
+    return <></>
   }
 
   return (
-    <section className="bg-[#FFFAE2] md:py-16 py-10">
-      <div className="flex justify-center items-center flex-col">
-        <Heading text="What Our Clients Say" />
-        <div className="flex justify-center items-center md:justify-start md:items-start">
+    <motion.section
+      className="bg-[#FFFAE2] md:py-16 py-10"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+    >
+      <motion.div className="flex justify-center items-center flex-col" variants={container}>
+        <motion.div variants={fadeInUp}>
+          <Heading text="What Our Clients Say" />
+        </motion.div>
+        <motion.div
+          variants={fadeInUp}
+          className="flex justify-center items-center md:justify-start md:items-start"
+        >
           <Line />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <p className="md:text-sm md:block hidden tracking-wide md:mt-5 mt-4 text-center text-black">
-        Don't just take our word for it. Here's what our satisfied clients across the Philippines
-        have to <br />
-        say about our construction services.
-      </p>
-      <p className="text-[10px] md:hidden block tracking-wide md:mt-5 mt-4 text-center text-black">
-        Don't just take our word for it. Here's what our satisfied clients across the Philippines
-        have to say about our construction services.
-      </p>
+      <motion.div variants={container} className="text-center mt-4 md:mt-5">
+        <motion.p
+          variants={fadeInUp}
+          className="md:text-sm md:block hidden tracking-wide text-black"
+        >
+          Don't just take our word for it. Here's what our satisfied clients across the Philippines
+          have to <br />
+          say about our construction services.
+        </motion.p>
+        <motion.p
+          variants={fadeInUp}
+          className="text-[10px] md:hidden block tracking-wide text-black"
+        >
+          Don't just take our word for it. Here's what our satisfied clients across the Philippines
+          have to say about our construction services.
+        </motion.p>
+      </motion.div>
 
-      <div className="flex justify-center items-center mt-8">
+      <motion.div variants={container} className="flex justify-center items-center mt-8">
         <div className="w-full lg:max-w-5xl px-0 sm:px-6 mx-0">
           <Swiper
             spaceBetween={10}
@@ -53,20 +91,21 @@ export const Testimonial: React.FC = () => {
           >
             {testimonials.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="bg-white rounded-lg cursor-pointer border-2 border-gray-100 shadow-md hover:shadow-lg sm:h-56 h-64 transition-shadow duration-300 p-5 text-left flex flex-col justify-between">
+                <motion.div
+                  variants={fadeInUp}
+                  className="bg-white rounded-lg cursor-pointer border-2 border-gray-100 shadow-md hover:shadow-lg sm:h-56 h-64 transition-shadow duration-300 p-5 text-left flex flex-col justify-between"
+                  whileHover={{ scale: 1.03 }}
+                >
                   <div>
                     <div className="flex mb-3">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
                           size={15}
-                          className={`${
-                            i < item?.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
-                          }`}
+                          className={`${i < item?.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
                         />
                       ))}
                     </div>
-
                     <p className="text-gray-700 text-xs md:text-xs tracking-wider leading-loose mb-2">
                       “{item?.feedback}”
                     </p>
@@ -88,19 +127,21 @@ export const Testimonial: React.FC = () => {
                       <p className="text-gray-500 text-[10px] md:text-xs">{item?.role}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="flex mt-9 flex-col items-center gap-5">
-        <p className="text-gray-700 tracking-wide text-xs md:text-sm">
+      <motion.div variants={container} className="flex mt-9 flex-col items-center gap-5">
+        <motion.p variants={fadeInUp} className="text-gray-700 tracking-wide text-xs md:text-sm">
           Ready to start your construction project with us?
-        </p>
-        <Button text="Request a Consultation" />
-      </div>
-    </section>
+        </motion.p>
+        <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
+          <Button text="Request a Consultation" />
+        </motion.div>
+      </motion.div>
+    </motion.section>
   )
 }

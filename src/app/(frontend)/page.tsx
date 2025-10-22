@@ -9,7 +9,7 @@ import { Testimonial } from './components/home/Testimonial'
 
 export default function HomePage() {
   return (
-    <div className="bg-white">
+    <div className="bg-white overflow-hidden">
       <Hero />
       <Company />
       <Aboutus />

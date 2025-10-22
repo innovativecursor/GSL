@@ -10,7 +10,7 @@ export default function Hero() {
     fetchHero()
   }, [])
 
-  if (!hero) return <p>Loading...</p>
+  if (!hero) return null
 
   const imageUrl = `${BASE_URL}${(hero.backgroundImage as AppImage)?.url || ''}`
 
@@ -21,7 +21,7 @@ export default function Hero() {
         alt={(hero.backgroundImage as AppImage)?.alt || 'Hero Image'}
         width={(hero.backgroundImage as AppImage)?.width || 1920}
         height={(hero.backgroundImage as AppImage)?.height || 765}
-        className=" shadow-lg max-w-full h-auto"
+        className=" shadow-lg max-w-full w-full h-auto"
       />
 
       <div className="absolute inset-0 flex flex-col items-start justify-center text-white bg-black/40 rounded-lg">
