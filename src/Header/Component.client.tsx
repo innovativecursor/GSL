@@ -39,7 +39,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
-          <HeaderNav data={data} />
+          <HeaderNav />
         </div>
         <div className="hidden md:flex items-center gap-10">
           <Button
@@ -77,7 +77,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', stiffness: 80, damping: 15 }}
             >
-              <HeaderNav data={data} />
+              <HeaderNav setMenuOpen={setMenuOpen} />
               <Button
                 size="lg"
                 className="bg-transparent text-black border border-black rounded-full w-40 h-12 font-medium text-base hover:bg-black hover:text-white transition-all"

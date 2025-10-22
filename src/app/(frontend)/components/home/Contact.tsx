@@ -5,7 +5,7 @@ export default function Contact() {
   const [status, setStatus] = useState('')
 
   return (
-    <div className="">
+    <div id="contactus" className="">
       <div
         className="bg-cover bg-center bg-no-repeat"
         style={{
@@ -123,7 +123,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="w-full mt-5 rounded-xl" style={{ height: '200px' }}>
+                {/* <div className="w-full mt-5 rounded-xl" style={{ height: '200px' }}>
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.093964269174!2d72.83607307498135!3d19.222215987047098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d5b0b9d0f9%3A0x4f1a1c5f8dfd57e3!2sI%20C%20Colony%2C%20Borivali%20West%2C%20Mumbai%2C%20Maharashtra%20400103!5e0!3m2!1sen!2sin!4v1707054000000!5m2!1sen!2sin"
                     width="100%"
@@ -134,6 +134,19 @@ export default function Contact() {
                     className="md:rounded-xl rounded-md"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="I C Colony, Borivali West Location"
+                  />
+                </div> */}
+                <div className="w-full mt-5 rounded-xl" style={{ height: '200px' }}>
+                  <iframe
+                    src="https://www.google.com/maps?q=Lot+4,+Blk.3,+Edgewood+Place+1,+Brgy.+Inarawan,+Antipolo+City,+Rizal+1870&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    className="md:rounded-xl rounded-md"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Edgewood Place 1, Antipolo City Location"
                   />
                 </div>
               </div>

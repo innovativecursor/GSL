@@ -30,7 +30,7 @@ const imageVariant = {
     opacity: 1,
     scale: 1,
     y: 0,
-  transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as any },
+    transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
@@ -40,14 +40,15 @@ const badgeVariant = {
     opacity: 1,
     y: 0,
     scale: 1,
-  transition: { delay: 0.5, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as any },
+    transition: { delay: 0.5, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
 export const Aboutus = () => {
   return (
     <motion.section
-      className="flex justify-center items-center bg-white lg:mt-20 md:mt-10 mt-3"
+      id="aboutus"
+      className="flex justify-center items-center bg-white lg:mt-20 md:mt-10 mt-3  scroll-mt-24"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.3 }}
@@ -58,11 +59,16 @@ export const Aboutus = () => {
       >
         <motion.div variants={imageVariant} className="relative">
           <div className="relative w-full h-72 sm:h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
-              <motion.div
+            <motion.div
               className="w-full h-full"
               initial={{ scale: 1 }}
               whileInView={{ scale: 1.05 }}
-              transition={{ duration: 5, ease: 'easeOut' as any, repeat: Infinity, repeatType: 'reverse' }}
+              transition={{
+                duration: 5,
+                ease: 'easeOut' as any,
+                repeat: Infinity,
+                repeatType: 'reverse',
+              }}
             >
               <Image
                 src="/aboutus.png"

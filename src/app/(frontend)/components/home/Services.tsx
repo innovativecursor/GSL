@@ -35,7 +35,7 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     scale: 1,
-  transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
@@ -53,7 +53,7 @@ const leftCard = {
     x: 0,
     rotate: 0,
     scale: 1,
-  transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
@@ -64,13 +64,14 @@ const rightCard = {
     x: 0,
     rotate: 0,
     scale: 1,
-  transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
 export const Services: React.FC = () => {
   return (
     <motion.section
+      id="services"
       className="bg-[#FFFAE2] lg:mt-28 md:mt-20 mt-12"
       initial="hidden"
       whileInView="visible"
