@@ -20,7 +20,7 @@ const fadeInUp = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
@@ -30,7 +30,7 @@ const imageVariant = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 1, ease: 'easeOut' },
+  transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
@@ -40,7 +40,7 @@ const badgeVariant = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: 0.5, duration: 0.6, ease: 'easeOut' },
+  transition: { delay: 0.5, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as any },
   },
 }
 
@@ -58,11 +58,11 @@ export const Aboutus = () => {
       >
         <motion.div variants={imageVariant} className="relative">
           <div className="relative w-full h-72 sm:h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
-            <motion.div
+              <motion.div
               className="w-full h-full"
               initial={{ scale: 1 }}
               whileInView={{ scale: 1.05 }}
-              transition={{ duration: 5, ease: 'easeOut', repeat: Infinity, repeatType: 'reverse' }}
+              transition={{ duration: 5, ease: 'easeOut' as any, repeat: Infinity, repeatType: 'reverse' }}
             >
               <Image
                 src="/aboutus.png"
