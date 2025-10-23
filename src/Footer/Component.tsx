@@ -1,11 +1,13 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram, Twitter } from 'lucide-react'
 import { Logo } from '@/components/Logo/Logo'
 import { FooterHeading } from './FooterHeading'
+import { useHero } from '@/app/(frontend)/contexts/HeroContext'
 
 export const Footer: React.FC = () => {
+  const { fetchSocialLinks, social } = useHero()
   const navItems = [
     { label: 'Home', url: '#home' },
     { label: 'About Us', url: '#aboutus' },
@@ -18,11 +20,15 @@ export const Footer: React.FC = () => {
     e.preventDefault()
     const element = document.querySelector(id)
     if (element) {
-      const offset = -100 
+      const offset = -100
       const y = element.getBoundingClientRect().top + window.scrollY + offset
       window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
+
+  useEffect(() => {
+    fetchSocialLinks()
+  }, [])
 
   return (
     <footer className="bg-[#B7CD00] cursor-pointer">
@@ -36,18 +42,44 @@ export const Footer: React.FC = () => {
               Building with Excellence, Designing with Vision.
             </p>
             <div className="flex items-center md:mt-5 mt-3 gap-4">
-              <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
-                <Facebook className="md:w-4 md:h-4 w-3 h-3" />
-              </div>
-              <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
-                <Instagram className="md:w-4 md:h-4 w-3 h-3" />
-              </div>
-              <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
-                <Linkedin className="md:w-4 md:h-4 w-3 h-3" />
-              </div>
-              <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
-                <Twitter className="md:w-4 md:h-4 w-3 h-3" />
-              </div>
+              {social?.facebook && (
+                <a href={social.facebook} target="_blank" rel="noopener noreferrer">
+                  <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
+                    <Facebook className="md:w-4 md:h-4 w-3 h-3" />
+                  </div>
+                </a>
+              )}
+              {social?.instagram && (
+                <a href={social.instagram} target="_blank" rel="noopener noreferrer">
+                  <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
+                    <Instagram className="md:w-4 md:h-4 w-3 h-3" />
+                  </div>
+                </a>
+              )}
+              {social?.linkedin && (
+                <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
+                  <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
+                    <Linkedin className="md:w-4 md:h-4 w-3 h-3" />
+                  </div>
+                </a>
+              )}
+              {social?.twitter && (
+                <a href={social.twitter} target="_blank" rel="noopener noreferrer">
+                  <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
+                    <Twitter className="md:w-4 md:h-4 w-3 h-3" />
+                  </div>
+                </a>
+              )}
+              {social?.youtube && (
+                <a href={social.youtube} target="_blank" rel="noopener noreferrer">
+                  <div className="md:w-8 md:h-8 w-6 h-6 rounded-full bg-white text-light flex justify-center items-center">
+                    <svg className="md:w-4 md:h-4 w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M10 15l5-3-5-3v6z" />
+                      <path d="M21.8 8s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C16.4 5 12 5 12 5h0s-4.4 0-7.1.1c-.5 0-1.2.1-1.9.9C2.4 6.5 2.2 8 2.2 8S2 9.5 2 11v2c0 1.5.2 3 .2 3s.2 1.5.8 2.2c.7.8 1.6.8 2 .9 1.5.1 6.8.1 6.8.1s4.4 0 7.1-.1c.5 0 1.2-.1 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.5.2-3v-2c0-1.5-.2-3-.2-3z" />
+                    </svg>
+                  </div>
+                </a>
+              )}
             </div>
           </div>
 

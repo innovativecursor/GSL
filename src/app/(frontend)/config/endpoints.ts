@@ -14,6 +14,9 @@ const endpoints = {
   projects: {
     getAll: `${baseUrl}/projects`,
   },
+  sociallinks: {
+    getAll: `${baseUrl}/globals/social-links`,
+  },
 }
 
 export default endpoints
