@@ -17,6 +17,9 @@ const endpoints = {
   sociallinks: {
     getAll: `${baseUrl}/globals/social-links`,
   },
+  contactSubmissions: {
+    create: `${baseUrl}/contact`,
+  }
 }
 
 export default endpoints
