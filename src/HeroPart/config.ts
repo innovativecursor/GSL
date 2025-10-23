@@ -22,14 +22,7 @@ export const Hero: GlobalConfig = {
       relationTo: 'media',
       required: true,
     },
-    // {
-    //   name: 'ctaText',
-    //   type: 'text',
-    // },
-    // {
-    //   name: 'ctaLink',
-    //   type: 'text',
-    // },
+   
   ],
 }
 
