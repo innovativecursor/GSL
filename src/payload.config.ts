@@ -20,6 +20,9 @@ import { getServerSideURL } from './utilities/getURL'
 import { Testimonials } from './collections/Testimonials'
 import { Projects } from './collections/Projects'
 import SocialLinks from './SocialMedia/config'
+import ContactSubmissions from './collections/contact-submissions'
+// import { ContactSubmissions } from './collections/contact-submissions'
+// import { Projects } from './app/(frontend)/components/home/Projects'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -68,7 +71,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Testimonials, Projects],
+  collections: [Pages, Posts, Media, Categories, Users, Testimonials, Projects, ContactSubmissions],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Hero, SocialLinks],
   plugins: [

@@ -46,7 +46,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             size="lg"
             className="bg-transparent text-black border border-black rounded-full xl:w-52 xl:h-14 md:w-44 h-12 font-medium text-base hover:bg-black hover:text-white transition-all"
           >
-            Call Now
+            <a href="tel:+09776071925">Call Now</a>
           </Button>
         </div>
 
@@ -82,7 +82,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                 size="lg"
                 className="bg-transparent text-black border border-black rounded-full w-40 h-12 font-medium text-base hover:bg-black hover:text-white transition-all"
               >
-                Call Now
+                <a href="tel:+09776071925">Call Now</a>
               </Button>
             </motion.div>
           </>
