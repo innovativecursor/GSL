@@ -14,7 +14,7 @@ const Counter: React.FC<CounterProps> = ({ end, suffix = '' }) => {
   const { ref, inView } = useInView({ threshold: 0.5 })
 
   useEffect(() => {
-  let counter: ReturnType<typeof setInterval> | undefined
+    let counter: ReturnType<typeof setInterval> | undefined
     if (inView) {
       let start = 0
       const duration = 1500
@@ -110,7 +110,8 @@ export default function Hero() {
 
           <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-8 lg:mt-10 md:mt-5 mt-3 md:px-6 md:py-4 rounded-lg items-center justify-start">
             <div className="flex items-center md:gap-3 gap-1">
-              <Counter end={12} suffix="+" />
+              {/* <Counter end={12} suffix="+" /> */}
+              <Counter end={hero.yearsOfExperience || 0} suffix="+" />
               <div className="text-start">
                 <p className="md:text-xs text-[5px] opacity-80">Years of</p>
                 <p className="font-semibold md:text-sm text-[5px] md:mt-1 text-white">Experience</p>
@@ -118,7 +119,8 @@ export default function Hero() {
             </div>
 
             <div className="flex items-center md:gap-3 gap-1">
-              <Counter end={200} suffix="+" />
+              {/* <Counter end={200} suffix="+" /> */}
+              <Counter end={hero.projectsCompleted || 0} suffix="+" />
               <div className="text-start">
                 <p className="md:text-xs text-[5px] opacity-80">Projects</p>
                 <p className="font-semibold md:text-sm text-[5px] md:mt-1 text-white">Completed</p>
@@ -126,7 +128,8 @@ export default function Hero() {
             </div>
 
             <div className="flex items-center md:gap-3 gap-1">
-              <Counter end={100} suffix="%" />
+              {/* <Counter end={100} suffix="%" /> */}
+              <Counter end={hero.clientSatisfaction || 0} suffix="%" />
               <div className="text-start">
                 <p className="md:text-xs text-[5px] opacity-80">Client</p>
                 <p className="font-semibold md:text-sm text-[5px] md:mt-1 text-white">

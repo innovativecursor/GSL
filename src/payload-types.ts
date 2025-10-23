@@ -1072,6 +1072,9 @@ export interface Hero {
   heading: string;
   subheading?: string | null;
   backgroundImage: number | Media;
+  yearsOfExperience: number;
+  projectsCompleted: number;
+  clientSatisfaction: number;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1129,6 +1132,9 @@ export interface HeroSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
   backgroundImage?: T;
+  yearsOfExperience?: T;
+  projectsCompleted?: T;
+  clientSatisfaction?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
