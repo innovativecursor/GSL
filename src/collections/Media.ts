@@ -79,24 +79,6 @@
 //   },
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import type { CollectionConfig } from 'payload'
 import path from 'path'
 
@@ -109,8 +91,8 @@ export const Media: CollectionConfig = {
     hidden: true,
   },
   upload: {
-    // staticDir: path.resolve('/var/www/pbrs-media'), // For linux
-    staticDir: path.resolve('C:\Users\Admin\Downloads'), // For windows
+    staticDir: path.resolve('/var/www/gsl-media'), // For linux
+    // staticDir: path.resolve('C:\Users\Admin\Downloads'), // For windows
     // staticDir: 'media', // Folder where files will be stored
     //  staticURL: '/media/images',
     mimeTypes: ['image/*'], // Allow images & videos
