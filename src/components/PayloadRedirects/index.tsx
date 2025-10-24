@@ -29,7 +29,6 @@
 //   (r): r is RedirectItem => 'from' in r && typeof r.from === 'string',
 // )
 
-
 //   const redirectItem = redirects.find((redirect) => redirect.from === url)
 
 //   if (redirectItem) {
@@ -46,21 +45,6 @@
 
 //   if (!disableNotFound) notFound()
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import type { Page, Post } from '@/payload-types'
 import { getCachedRedirects } from '@/utilities/getRedirects'
@@ -83,10 +67,16 @@ interface RedirectItem {
 }
 
 export default async function PayloadRedirects({ disableNotFound, url }: Props) {
-  const redirectsRaw = await getCachedRedirects()()
+  // const redirectsRaw = await getCachedRedirects()()
+  // const redirects: RedirectItem[] = redirectsRaw.filter(
+  //   (r): r is RedirectItem => 'from' in r && typeof r.from === 'string'
+  // )
+
+  const redirectsRaw: unknown[] = await getCachedRedirects()()
 
   const redirects: RedirectItem[] = redirectsRaw.filter(
-    (r): r is RedirectItem => 'from' in r && typeof r.from === 'string'
+    (r): r is RedirectItem =>
+      typeof r === 'object' && r !== null && 'from' in r && typeof r.from === 'string',
   )
 
   const redirectItem = redirects.find((redirect) => redirect.from === url)
