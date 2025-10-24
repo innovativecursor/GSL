@@ -2,8 +2,10 @@ export interface HeroData {
   heading: string
   subheading: string
   backgroundImage: { url: string }
+  yearsOfExperience?: number
+  projectsCompleted?: number
+  clientSatisfaction?: number
 }
-
 export interface TestimonialData {
   id: number
   name: string

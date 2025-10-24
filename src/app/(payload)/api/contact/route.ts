@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic'
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import payload from 'payload'
-import path from 'path'
+// import path from 'path'
 
 let isPayloadInitialized = false
 
@@ -12,9 +12,9 @@ import payloadConfig from '../../../../../payload.config'
 async function initPayload() {
   if (!isPayloadInitialized) {
     await payload.init({
-      secret: process.env.PAYLOAD_SECRET || '',
+      // secret: process.env.PAYLOAD_SECRET || '',
       config: payloadConfig,
-      disableAutomaticMigrations: true,
+      // disableAutomaticMigrations: true,
     })
     isPayloadInitialized = true
   }
