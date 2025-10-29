@@ -33,7 +33,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
   return (
     <header className="w-full bg-primary fixed top-0 z-[999]">
-      <div className="md:py-5 py-3 flex justify-between responsive-mx">
+      <div className="md:py-5 py-2 flex justify-between responsive-mx">
         <Link href="/">
           <Logo loading="eager" priority="high" className="invert dark:invert-0" />
         </Link>

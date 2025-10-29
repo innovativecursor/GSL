@@ -21,7 +21,6 @@ const fadeInUp = {
     opacity: 1,
     y: 0,
     scale: 1,
-    // transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
     transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as Transition['ease'] },
   },
 }
@@ -32,7 +31,6 @@ const imageVariant = {
     opacity: 1,
     scale: 1,
     y: 0,
-    // transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as any },
     transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as Transition['ease'] },
   },
 }
@@ -43,7 +41,6 @@ const badgeVariant = {
     opacity: 1,
     y: 0,
     scale: 1,
-    // transition: { delay: 0.5, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as any },
     transition: { delay: 0.5, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as Transition['ease'] },
   },
 }
@@ -69,7 +66,6 @@ export const Aboutus = () => {
               whileInView={{ scale: 1.05 }}
               transition={{
                 duration: 5,
-                // ease: 'easeOut' as any,
                 ease: 'easeOut' as Transition['ease'],
                 repeat: Infinity,
                 repeatType: 'reverse',
