@@ -8,7 +8,7 @@ export const HeaderNav: React.FC<{ setMenuOpen?: (open: boolean) => void }> = ({
   const navItems = [
     { label: 'Home', url: '/' },
     { label: 'About Us', url: '/Aboutus' },
-    { label: 'Projects', url: '/projects' },
+    { label: 'Projects', url: '/Projects' },
     { label: 'Services', url: '/services' },
     { label: 'Contact Us', url: '/contactus' },
   ]

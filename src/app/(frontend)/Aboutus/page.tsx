@@ -1,17 +1,12 @@
 import Image from 'next/image'
 import { Heading } from '../components/ui/Heading'
 import { Line } from '../components/ui/Line'
+import { TopBanner } from '../components/ui/TopBananer'
 
 export default function Aboutus() {
   return (
     <div className="md:mt-20 mt-16 overflow-hidden bg-white md:pb-20 pb-12">
-      <Image
-        src="/about.png"
-        alt="aboutus"
-        width={1200}
-        height={800}
-        className="shadow-lg max-w-full w-full h-auto"
-      />
+      <TopBanner src="/about.png" alt="about us" />
 
       <div className="flex justify-center items-center">
         <div
