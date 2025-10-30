@@ -13,7 +13,7 @@ const fadeInUp = {
 export const ProjectData = ({ currentPage }: { currentPage: number }) => {
   const { fetchProjects, filteredProjects } = useProjects()
   const pathname = usePathname()
-  const [projectsPerPage] = useState(5)
+  const [projectsPerPage] = useState(16)
 
   useEffect(() => {
     fetchProjects()
