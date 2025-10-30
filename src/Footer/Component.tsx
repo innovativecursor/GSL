@@ -9,22 +9,12 @@ import { useHero } from '@/app/(frontend)/contexts/HeroContext'
 export const Footer: React.FC = () => {
   const { fetchSocialLinks, social } = useHero()
   const navItems = [
-    { label: 'Home', url: '#home' },
-    { label: 'About Us', url: '#aboutus' },
-    { label: 'Projects', url: '#projects' },
-    { label: 'Services', url: '#services' },
-    { label: 'Contact Us', url: '#contactus' },
+    { label: 'Home', url: '/' },
+    { label: 'About Us', url: '/Aboutus' },
+    { label: 'Projects', url: '/Projects' },
+    { label: 'Services', url: '/Services' },
+    { label: 'Contact Us', url: '/Contactus' },
   ]
-
-  const handleScroll = (e: React.MouseEvent, id: string) => {
-    e.preventDefault()
-    const element = document.querySelector(id)
-    if (element) {
-      const offset = -100
-      const y = element.getBoundingClientRect().top + window.scrollY + offset
-      window.scrollTo({ top: y, behavior: 'smooth' })
-    }
-  }
 
   useEffect(() => {
     fetchSocialLinks()
@@ -98,14 +88,13 @@ export const Footer: React.FC = () => {
               <FooterHeading text="Quick Links" className="mb-5" />
               <div className="flex flex-col items-start text-black tracking-wide gap-4">
                 {navItems.map(({ label, url }, i) => (
-                  <a
+                  <Link
                     key={i}
                     href={url}
-                    onClick={(e) => handleScroll(e, url)}
                     className="text-xs hover:text-black/80 transition-colors"
                   >
                     {label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
