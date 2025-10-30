@@ -56,7 +56,7 @@ export const Projects: React.FC = () => {
 
           <div className="flex justify-center items-center ">
             <div className="mx-4 sm:mx-5 md:mx-[4vw] w-full lg:mx-[15vw]">
-              <ProjectData />
+              <ProjectData currentPage={1} />
             </div>
           </div>
 
