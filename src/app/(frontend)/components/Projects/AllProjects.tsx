@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Pagination } from '../pagination/Pagination'
 import { Heading } from '../ui/Heading'
 import { Line } from '../ui/Line'
@@ -10,8 +10,12 @@ import { useProjects } from '../../contexts/ProjectsContext'
 
 export const AllProjects = () => {
   const [currentPage, setCurrentPage] = useState(1)
-  const { filteredProjects } = useProjects()
+  const { filteredProjects, fetchProjects } = useProjects()
   const totalPages = Math.ceil(filteredProjects.length / 6)
+
+  useEffect(() => {
+    fetchProjects()
+  }, [])
 
   return (
     <div className="md:mt-20 mt-16 overflow-hidden bg-white md:pb-20 pb-12">

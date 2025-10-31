@@ -1,5 +1,5 @@
 'use client'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { X, MapPin, ChevronRight, ChevronLeft } from 'lucide-react'
@@ -12,6 +12,35 @@ export default function ProjectModal({ project, onClose }: any) {
   const backdropRef = useRef<HTMLDivElement>(null)
   const firstImage = project?.images?.[0]?.image?.url || '/placeholder.png'
   const images = project?.images?.length ? project.images : [{ image: { url: firstImage } }]
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const originalTitle = document.title
+    const originalDescriptionTag = document.querySelector('meta[name="description"]')
+    const newDescription = project?.description?.slice(0, 150) || 'Project details and highlights.'
+
+    document.title = `${project.title} | GSL Construction, Design & Consultancy`
+
+    if (originalDescriptionTag) {
+      originalDescriptionTag.setAttribute('content', newDescription)
+    } else {
+      const meta = document.createElement('meta')
+      meta.name = 'description'
+      meta.content = newDescription
+      document.head.appendChild(meta)
+    }
+
+    return () => {
+      document.title = originalTitle || 'GSL Construction, Design & Consultancy'
+      if (originalDescriptionTag) {
+        originalDescriptionTag.setAttribute(
+          'content',
+          'Explore our projects, designs, and construction excellence at GSL Construction.',
+        )
+      }
+    }
+  }, [project])
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === backdropRef.current) {
@@ -56,16 +85,11 @@ export default function ProjectModal({ project, onClose }: any) {
           </Swiper>
 
           <button className="custom-prev absolute left-4 top-1/2 -translate-y-1/2 bg-primary text-black md:w-12 md:h-12 w-8 h-8 flex items-center justify-center rounded-full z-20">
-            <span className="md:text-[20px] text-[10px] font-bold">
-              <ChevronLeft />
-            </span>
+            <ChevronLeft className="md:text-[20px] text-[10px]" />
           </button>
 
           <button className="custom-next absolute right-4 top-1/2 -translate-y-1/2 bg-primary text-black md:w-12 md:h-12 w-8 h-8 flex items-center justify-center rounded-full z-20 ">
-            <span className="md:text-[20px] text-[10px] font-bold">
-              {' '}
-              <ChevronRight />
-            </span>
+            <ChevronRight className="md:text-[20px] text-[10px]" />
           </button>
         </div>
 
@@ -75,7 +99,7 @@ export default function ProjectModal({ project, onClose }: any) {
             Project Type: <span className="font-medium">{project.projectType}</span>
           </p>
 
-          <div className="flex items-center text-sm text-gray-700  md:mt-2 mt-1">
+          <div className="flex items-center text-sm text-gray-700 md:mt-2 mt-1">
             <MapPin size={14} className="mr-1" />
             {project.location}
           </div>
