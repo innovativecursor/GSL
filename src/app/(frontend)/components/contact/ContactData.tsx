@@ -38,29 +38,12 @@ export const ContactData = () => {
     <div className="relative">
       <Toaster position="top-right" />
 
-
       {isLoading && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black bg-opacity-50">
-          <svg
-            className="animate-spin h-12 w-12 text-yellow-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-            ></path>
-          </svg>
+        <div className="fixed inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm z-[9999]">
+          <div className="relative w-20 h-20">
+            <div className="absolute inset-0 rounded-full border-4 border-t-transparent border-b-transparent border-[#B7CD00] animate-spin"></div>
+            <div className="absolute inset-2 rounded-full border-4 border-t-transparent border-b-transparent border-[#fff9b0] animate-[spin_2s_linear_infinite_reverse]"></div>
+          </div>
         </div>
       )}
 

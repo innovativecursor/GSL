@@ -3,18 +3,14 @@ export const dynamic = 'force-dynamic'
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import payload from 'payload'
-// import path from 'path'
+import payloadConfig from '../../../../../payload.config'
 
 let isPayloadInitialized = false
-
-import payloadConfig from '../../../../../payload.config'
 
 async function initPayload() {
   if (!isPayloadInitialized) {
     await payload.init({
-      // secret: process.env.PAYLOAD_SECRET || '',
       config: payloadConfig,
-      // disableAutomaticMigrations: true,
     })
     isPayloadInitialized = true
   }
@@ -25,7 +21,6 @@ export async function POST(req: Request) {
     await initPayload()
 
     const data = await req.json()
-
     await payload.create({
       collection: 'contact-submissions',
       data,
@@ -42,9 +37,17 @@ export async function POST(req: Request) {
 
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
-      to: data.email,
-      subject: 'Thank you for contacting us',
-      text: `Hi ${data.fullName},\n\nThank you for contacting us. We will get back to you soon.`,
+      to: process.env.SMTP_USER,
+      subject: `New Contact Submission from ${data.fullName}`,
+      text: `You have a new contact form submission:
+
+Full Name: ${data.fullName}
+Email: ${data.email}
+Phone: ${data.phone}
+Message:
+${data.message}
+
+Please check your admin panel for more details.`,
     })
 
     return NextResponse.json({ success: true })

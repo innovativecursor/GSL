@@ -65,16 +65,16 @@ export const Testimonial: React.FC = () => {
           variants={fadeInUp}
           className="md:text-sm md:block hidden tracking-wide text-black"
         >
-          Don&apos;t just take our word for it. Here&apos;s what our satisfied clients across the Philippines
-          have to <br />
+          Don&apos;t just take our word for it. Here&apos;s what our satisfied clients across the
+          Philippines have to <br />
           say about our construction services.
         </motion.p>
         <motion.p
           variants={fadeInUp}
           className="text-[10px] md:hidden block tracking-wide text-black"
         >
-          Don&apos;t just take our word for it. Here&apos;s what our satisfied clients across the Philippines
-          have to say about our construction services.
+          Don&apos;t just take our word for it. Here&apos;s what our satisfied clients across the
+          Philippines have to say about our construction services.
         </motion.p>
       </motion.div>
 
@@ -89,47 +89,55 @@ export const Testimonial: React.FC = () => {
             }}
             className="pb-10"
           >
-            {testimonials.map((item) => (
-              <SwiperSlide key={item.id}>
-                <motion.div
-                  variants={fadeInUp}
-                  className="bg-white rounded-lg cursor-pointer border-2 border-gray-100 shadow-md hover:shadow-lg sm:h-56 h-64 transition-shadow duration-300 p-5 text-left flex flex-col justify-between"
-                  whileHover={{ scale: 1.03 }}
-                >
-                  <div>
-                    <div className="flex mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={15}
-                          className={`${i < item?.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
-                        />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 text-xs md:text-xs tracking-wider leading-loose mb-2">
-                      “{item?.feedback}”
-                    </p>
-                  </div>
+            {testimonials.map((item) => {
+              const feedbackWords = item?.feedback?.split(' ') || []
+              const truncatedFeedback =
+                feedbackWords.length > 40
+                  ? feedbackWords.slice(0, 40).join(' ') + '...'
+                  : item?.feedback
 
-                  <div className="flex items-center gap-3 mt-auto">
-                    <div className="relative w-10 h-10 border-2 border-[#FCD33D] rounded-full overflow-hidden">
-                      <Image
-                        src={`${BASE_URL}${(item.image as AppImage)?.url || ''}`}
-                        alt={(item.image as AppImage)?.alt || item.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+              return (
+                <SwiperSlide key={item.id}>
+                  <motion.div
+                    variants={fadeInUp}
+                    className="bg-white rounded-lg cursor-pointer border-2 border-gray-100 shadow-md hover:shadow-lg sm:h-56 h-72 transition-shadow duration-300 p-5 text-left flex flex-col justify-between"
+                    whileHover={{ scale: 1.03 }}
+                  >
                     <div>
-                      <h1 className="font-semibold text-gray-900 text-xs md:text-sm">
-                        {item?.name}
-                      </h1>
-                      <p className="text-gray-500 text-[10px] md:text-xs">{item?.role}</p>
+                      <div className="flex mb-3">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            size={15}
+                            className={`${i < item?.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-gray-700 text-xs md:text-xs tracking-wider leading-loose mb-2">
+                        {truncatedFeedback}
+                      </p>
                     </div>
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
+
+                    <div className="flex items-center gap-3 mt-auto">
+                      <div className="relative w-10 h-10 border-2 border-[#FCD33D] rounded-full overflow-hidden">
+                        <Image
+                          src={`${BASE_URL}${(item.image as AppImage)?.url || ''}`}
+                          alt={(item.image as AppImage)?.alt || item.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h1 className="font-semibold text-gray-900 text-xs md:text-sm">
+                          {item?.name}
+                        </h1>
+                        <p className="text-gray-500 text-[10px] md:text-xs">{item?.role}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              )
+            })}
           </Swiper>
         </div>
       </motion.div>
