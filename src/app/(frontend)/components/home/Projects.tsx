@@ -75,14 +75,3 @@ export const Projects: React.FC = () => {
     </motion.section>
   )
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -6,48 +6,67 @@ import { MapPin, Phone, Mail } from 'lucide-react'
 
 export const AllContactData = () => {
   return (
-    <div className="bg-white md:pb-20 pb-12">
+    <div className="bg-white pb-20">
       <div className="md:mt-20 mt-16 overflow-hidden">
         <TopBanner src="/contact1.png" alt="about us" />
         <TopBanner src="/contact2.png" alt="about us" />
       </div>
 
-      <div className="bg-[#FCD33D] text-black md:flex justify-between items-center md:px-16 px-6 py-10 md:rounded-2xl rounded-xl mx-4 sm:mx-5 md:mx-[4vw] lg:mx-[10vw] md:mt-[-70px] mt-[-50px] relative z-10 shadow-lg">
-        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-          <div className="flex flex-col items-center space-x-5">
-            <span className="md:text-2xl">
-              <Phone />
-            </span>
-            <h4 className="font-semibold md:text-lg border-b border-black">Phone</h4>
+      <div
+        className="bg-[#FCD33D] text-black md:flex justify-between items-center md:px-16 px-6 py-10 md:rounded-2xl mx-0 
+      sm:mx-5 md:mx-[4vw] lg:mx-[10vw] md:mt-[-70px] relative z-10 shadow-lg"
+      >
+        <div className="flex flex-row justify-between items-start mb-8 md:mb-0">
+          <div className="flex items-center">
+            <div className="flex flex-col items-start ">
+              <span className="">
+                <Phone className="md:w-7 md:h-7 w-5 h-5" />
+              </span>
+              <h4 className="font-semibold mt-2 md:text-lg">Phone</h4>
+              <div className="md:w-32 w-16 h-[1px] mt-1 bg-black"></div>
+              <p className="mt-3 text-xs font-semibold md:text-base">+63 90909090</p>
+            </div>
           </div>
-          <p className="mt-3 text-xs font-bold md:text-base">+63 90909090</p>
+          <div className="flex md:hidden flex-col items-start mb-8 md:mb-0">
+            <div className="flex flex-col items-start ">
+              <span className="">
+                <Mail className="md:w-7 md:h-7 w-5 h-5" />
+              </span>
+              <h4 className="font-semibold mt-2 md:text-lg">Mail</h4>
+              <div className="md:w-32 w-16 h-[1px] mt-1 bg-black"></div>
+            </div>
+            <p className="mt-3 text-xs font-semibold md:text-base">gslcdc.17256@gmail.com</p>
+          </div>
         </div>
 
-        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-          <div className="flex items-center space-x-5">
-            <span className="md:text-2xl">
-              <Mail />
+        <div className="md:flex hidden flex-col items-start mb-8 md:mb-0">
+          <div className="flex flex-col items-start ">
+            <span className="">
+              <Mail className="w-7 h-7" />
             </span>
-            <h4 className="font-semibold md:text-lg border-b">Mail</h4>
+            <h4 className="font-semibold mt-2 md:text-lg">Mail</h4>
+            <div className="w-32 h-[1px] mt-1 bg-black"></div>
           </div>
-          <p className="mt-3 text-xs font-bold md:text-base">gslcdc.17256@gmail.com</p>
+          <p className="mt-3 text-xs font-semibold md:text-base">gslcdc.17256@gmail.com</p>
         </div>
 
-        <div className="flex flex-col items-center md:items-start">
-          <div className="flex items-center space-x-5">
-            <span className="md:text-2xl">
-              <MapPin />
+        <div className="flex flex-col items-start mb-8 md:mb-0">
+          <div className="flex flex-col items-start ">
+            <span className="">
+              <MapPin className="md:w-7 md:h-7 w-5 h-5" />
             </span>
-            <h4 className="font-semibold md:text-lg border-b">Location</h4>
+            <h4 className="font-semibold mt-2 md:text-lg">Location</h4>
+            <div className="md:w-32 w-16 h-[1px] mt-1 bg-black"></div>
           </div>
-          <p className="mt-3 text-xs md:text-base text-center font-bold md:text-left">
+          <p className="mt-3 text-xs font-semibold md:text-base">
+            {' '}
             Lot 4, Blk 3, Edgewood Place 1, Brgy. Inarawan, <br />
             Antipolo City, Rizal 1870
           </p>
         </div>
       </div>
 
-      <div className="mt-20 mx-4 sm:mx-5 md:mx-[4vw] lg:mx-[10vw]  grid md:grid-cols-2 md:gap-16 gap-10">
+      <div className="md:mt-20 mt-12 mx-4 sm:mx-5 md:mx-[4vw] lg:mx-[10vw]  grid md:grid-cols-2 md:gap-16 gap-10">
         <div>
           <h2 className="text-2xl text-black font-extrabold mb-6">Get in Touch</h2>
           <ContactData />

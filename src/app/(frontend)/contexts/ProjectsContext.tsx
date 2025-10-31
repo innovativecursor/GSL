@@ -1,4 +1,5 @@
 'use client'
+
 import { createContext, useContext, useState, ReactNode } from 'react'
 import { ProjectData } from '../types/globals'
 import { fetchDataGet } from '../utils/fetchData'

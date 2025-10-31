@@ -518,8 +518,19 @@ export interface Project {
   id: number;
   title: string;
   category: 'Residential' | 'Commercial';
+  projectType: string;
   location: string;
-  image: number | Media;
+  description: string;
+  keyHighlights?:
+    | {
+        point: string;
+        id?: string | null;
+      }[]
+    | null;
+  images: {
+    image: number | Media;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -958,8 +969,21 @@ export interface TestimonialsSelect<T extends boolean = true> {
 export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
   category?: T;
+  projectType?: T;
   location?: T;
-  image?: T;
+  description?: T;
+  keyHighlights?:
+    | T
+    | {
+        point?: T;
+        id?: T;
+      };
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

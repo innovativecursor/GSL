@@ -22,18 +22,28 @@ export interface TestimonialData {
   updatedAt: string
 }
 
-export interface ProjectData {
-  id: number
-  title: string
-  description: string
-  category: string
-  location: string
+export interface ProjectImage {
   image: {
     id: string
     url: string
     filename: string
     mimeType: string
   }
+}
+
+export interface ProjectHighlight {
+  point: string
+}
+
+export interface ProjectData {
+  id: string
+  title: string
+  description: string
+  category: 'Residential' | 'Commercial'
+  projectType: string
+  location: string
+  image: ProjectImage[]
+  keyHighlights: ProjectHighlight[]
   createdAt: string
   updatedAt: string
 }
