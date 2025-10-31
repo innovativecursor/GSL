@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, cubicBezier } from 'framer-motion'
 import { Heading } from '../ui/Heading'
 import { Line } from '../ui/Line'
 import { TopBanner } from '../ui/TopBananer'
@@ -12,7 +12,7 @@ const floatIn = {
     y: 0,
     rotateX: 0,
     scale: 1,
-    transition: { duration: 1.1, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 1.1, ease: cubicBezier(0.25, 1, 0.5, 1) },
   },
 }
 
@@ -23,7 +23,7 @@ const floatRight = {
     x: 0,
     rotateY: 0,
     scale: 1,
-    transition: { duration: 1, ease: [0.45, 0, 0.55, 1] },
+    transition: { duration: 1, ease: cubicBezier(0.45, 0, 0.55, 1) },
   },
 }
 
@@ -34,7 +34,7 @@ const floatLeft = {
     x: 0,
     rotateY: 0,
     scale: 1,
-    transition: { duration: 1, ease: [0.45, 0, 0.55, 1] },
+    transition: { duration: 1, ease: cubicBezier(0.45, 0, 0.55, 1) },
   },
 }
 
@@ -44,7 +44,7 @@ const popUp = {
     opacity: 1,
     scale: 1,
     rotate: 0,
-    transition: { duration: 0.9, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 0.8, ease: cubicBezier(0.25, 1, 0.5, 1) },
   },
 }
 

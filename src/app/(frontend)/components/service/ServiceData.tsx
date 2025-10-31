@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, cubicBezier } from 'framer-motion'
 import { TopBanner } from '../ui/TopBananer'
 
 const fadeInUp = {
@@ -10,7 +10,7 @@ const fadeInUp = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.9, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 0.9, ease: cubicBezier(0.25, 1, 0.5, 1) },
   },
 }
 
@@ -20,7 +20,7 @@ const fadeInLeft = {
     opacity: 1,
     x: 0,
     rotateY: 0,
-    transition: { duration: 0.9, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 0.9, ease: cubicBezier(0.25, 1, 0.5, 1) },
   },
 }
 
@@ -30,7 +30,7 @@ const fadeInRight = {
     opacity: 1,
     x: 0,
     rotateY: 0,
-    transition: { duration: 0.9, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 0.9, ease: cubicBezier(0.25, 1, 0.5, 1) },
   },
 }
 
@@ -39,7 +39,7 @@ const pop = {
   visible: {
     scale: 1,
     opacity: 1,
-    transition: { duration: 0.5, type: 'spring', stiffness: 180 },
+    transition: { duration: 0.5, type: "spring" as const, stiffness: 180 },
   },
 }
 
