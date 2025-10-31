@@ -2,6 +2,13 @@ import Image from 'next/image'
 import { Heading } from '../components/ui/Heading'
 import { Line } from '../components/ui/Line'
 import { TopBanner } from '../components/ui/TopBananer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Story | GSL Construction, Design & Consultancy',
+  description:
+    'At GSL CDC, we transform ideas into reality. With a passion for innovation and a commitment to client satisfaction, we deliver reliable design, construction, and consultancy solutions across the Philippines.',
+}
 
 export default function Aboutus() {
   return (

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-
 import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
@@ -52,11 +51,62 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 }
 
 export const metadata: Metadata = {
-  title: 'GSL - Home',
   metadataBase: new URL(getServerSideURL()),
-  openGraph: mergeOpenGraph(),
+
+  title: {
+    default: 'GSL Construction, Design & Consultancy',
+    template: '%s | GSL CDC',
+  },
+  description:
+    'GSL Construction, Design & Consultancy (GSL CDC) provides end-to-end services in architecture, construction, and engineering. We deliver innovative, sustainable, and client-focused solutions across residential, commercial, and structural projects.',
+
+  keywords: [
+    'GSL Construction',
+    'GSL CDC',
+    'Design and Consultancy',
+    'Architectural Services',
+    'Structural Engineering',
+    'Construction Company Philippines',
+    'Billboard Steel Frames',
+    'Commercial Construction',
+    'Residential Design',
+  ],
+
+  openGraph: {
+    title: 'GSL Construction, Design & Consultancy',
+    description:
+      'Explore GSL CDC — a trusted construction and design firm offering sustainable and professional solutions for residential, commercial, and structural projects.',
+    url: getServerSideURL(),
+    siteName: 'GSL CDC',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'GSL Construction Design and Consultancy',
+      },
+    ],
+    locale: 'en_PH',
+    type: 'website',
+  },
+
   twitter: {
     card: 'summary_large_image',
-    creator: '@payloadcms',
+    title: 'GSL Construction, Design & Consultancy',
+    description:
+      'Trusted experts in design, construction, and engineering solutions across the Philippines.',
+    images: ['/og-image.jpg'],
+    creator: '@gslcdc',
+  },
+
+  authors: [{ name: 'GSL Construction, Design & Consultancy' }],
+  creator: 'GSL CDC Team',
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: getServerSideURL(),
   },
 }

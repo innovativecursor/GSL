@@ -1,5 +1,12 @@
+import { Metadata } from 'next'
 import { TopBanner } from '../components/ui/TopBananer'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'Construction, Design & Consultancy Services | GSL CDC Philippines',
+  description:
+    'GSL CDC offers professional architectural design, project management, structural steel fabrication, and signage construction services. Delivering quality and sustainable engineering solutions across the Philippines.',
+}
 
 export default function Services() {
   return (

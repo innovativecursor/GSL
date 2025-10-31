@@ -10,6 +10,7 @@ import 'swiper/css/pagination'
 import { useTestimonial } from '../../contexts/TestimonialsContext'
 import { BASE_URL } from '../../config/baseUrl'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const container = {
   hidden: {},
@@ -146,9 +147,11 @@ export const Testimonial: React.FC = () => {
         <motion.p variants={fadeInUp} className="text-gray-700 tracking-wide text-xs md:text-sm">
           Ready to start your construction project with us?
         </motion.p>
-        <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
-          <Button text="Request a Consultation" />
-        </motion.div>
+        <Link href="/Contactus">
+          <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
+            <Button text="Request a Consultation" />
+          </motion.div>
+        </Link>
       </motion.div>
     </motion.section>
   )
