@@ -121,9 +121,15 @@ export const Testimonial: React.FC = () => {
 
                     <div className="flex items-center gap-3 mt-auto">
                       <div className="relative w-10 h-10 border-2 border-[#FCD33D] rounded-full overflow-hidden">
-                        <Image
+                        {/* <Image
                           src={`${BASE_URL}${(item.image as AppImage)?.url || ''}`}
                           alt={(item.image as AppImage)?.alt || item.name}
+                          fill
+                          className="object-cover"
+                        /> */}
+                        <Image
+                          src={(item?.image as AppImage)?.url || '/placeholder.png'}
+                          alt={(item?.image as AppImage)?.alt || item?.name || 'Client image'}
                           fill
                           className="object-cover"
                         />

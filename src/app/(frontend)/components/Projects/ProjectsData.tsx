@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useProjects } from '../../contexts/ProjectsContext'
 import { usePathname } from 'next/navigation'
@@ -13,22 +13,14 @@ const fadeInUp = {
 }
 
 export const ProjectData = ({ currentPage }: { currentPage: number }) => {
-  const { fetchProjects, filteredProjects } = useProjects()
+  const { filteredProjects } = useProjects()
   const pathname = usePathname()
-  const [projectsPerPage] = useState(16)
   const [selectedProject, setSelectedProject] = useState<any | null>(null)
-
-  useEffect(() => {
-    fetchProjects()
-  }, [])
 
   const handleOpenModal = (project: any) => setSelectedProject(project)
   const handleCloseModal = () => setSelectedProject(null)
 
-  const projectsToShow =
-    pathname === '/'
-      ? filteredProjects.slice(0, 6)
-      : filteredProjects.slice((currentPage - 1) * projectsPerPage, currentPage * projectsPerPage)
+  const projectsToShow = pathname === '/' ? filteredProjects.slice(0, 6) : filteredProjects
 
   return (
     <>

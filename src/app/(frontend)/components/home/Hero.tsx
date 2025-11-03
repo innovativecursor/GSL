@@ -57,7 +57,8 @@ export default function Hero() {
 
   if (!hero) return null
 
-  const imageUrl = `${BASE_URL}${(hero.backgroundImage as AppImage)?.url || ''}`
+  // const imageUrl = `${BASE_URL}${(hero.backgroundImage as AppImage)?.url || ''}`
+  const imageUrl = hero?.backgroundImage?.url || '/placeholder.png'
 
   return (
     <section
