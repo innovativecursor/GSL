@@ -25,8 +25,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
-        <link href="/favicon.ico" rel="icon" sizes="32x32" />
-        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <link href="/logoicon.png" rel="icon" sizes="32x32" />
+        <link href="/logoicon.png" rel="icon" type="image/svg+xml" />
       </head>
       <body>
         <>
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     siteName: 'GSL CDC',
     images: [
       {
-        url: '/og-image.jpg',
+        url: `${getServerSideURL()}/banner.png`,
         width: 1200,
         height: 630,
         alt: 'GSL Construction Design and Consultancy',
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     title: 'GSL Construction, Design & Consultancy',
     description:
       'Trusted experts in design, construction, and engineering solutions across the Philippines.',
-    images: ['/og-image.jpg'],
+    images: [`${getServerSideURL()}/banner.png`],
     creator: '@gslcdc',
   },
 
