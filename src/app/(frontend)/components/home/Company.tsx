@@ -10,13 +10,27 @@ import logo7 from '../../../../../public/logo7.png'
 import logo8 from '../../../../../public/logo8.png'
 import logo9 from '../../../../../public/logo9.png'
 import logo10 from '../../../../../public/logo10.png'
-// import logo11 from '../../../../../public/logo11.png'
+import logo12 from '../../../../../public/logo12.jpg'
+import logo11 from '../../../../../public/logo11.png'
 
 import { Line } from '../ui/Line'
 import { Heading } from '../ui/Heading'
 
 export const Company = () => {
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10]
+  const logos = [
+    logo1,
+    logo2,
+    logo3,
+    logo4,
+    logo5,
+    logo6,
+    logo7,
+    logo8,
+    logo9,
+    logo10,
+    logo11,
+    logo12,
+  ]
 
   return (
     <div className="md:py-16 py-9 bg-white">
@@ -27,7 +41,7 @@ export const Company = () => {
         </div>
       </div>
       <Marquee speed={200} gradient={false}>
-        <div className="flex items-center md:gap-12 gap-5 justify-center lg:mt-20 mt-9">
+        <div className="flex items-center bg-white cursor-pointer md:gap-12 gap-5 justify-center lg:mt-20 mt-9 md:px-9 px-5">
           {logos.map((logo, i) => (
             <div key={i} className="flex justify-center items-center">
               <Image
