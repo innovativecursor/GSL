@@ -75,7 +75,7 @@ export const Aboutus = () => {
                 src="/aboutus.jpg"
                 alt="Construction work"
                 fill
-                className="object-cover"
+                // className="object-cover"
                 priority
               />
             </motion.div>
