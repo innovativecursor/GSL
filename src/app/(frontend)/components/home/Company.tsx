@@ -10,13 +10,13 @@ import logo7 from '../../../../../public/logo7.png'
 import logo8 from '../../../../../public/logo8.png'
 import logo9 from '../../../../../public/logo9.png'
 import logo10 from '../../../../../public/logo10.png'
-import logo11 from '../../../../../public/logo11.png'
+// import logo11 from '../../../../../public/logo11.png'
 
 import { Line } from '../ui/Line'
 import { Heading } from '../ui/Heading'
 
 export const Company = () => {
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11]
+  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10]
 
   return (
     <div className="md:py-16 py-9 bg-white">

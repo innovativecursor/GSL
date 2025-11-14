@@ -94,7 +94,7 @@ export const About = () => {
 
               <motion.p
                 variants={floatIn}
-                className="text-black mt-5 md:text-sm text-xs text-justify tracking-wide leading-relaxed"
+                className="text-black mt-7 md:text-sm text-xs text-justify tracking-wide leading-relaxed"
               >
                 At GSL Construction Design and Consultancy, we transform ideas into reality. With
                 years of experience in design, construction, and project management, we are
@@ -104,7 +104,7 @@ export const About = () => {
 
               <motion.p
                 variants={floatIn}
-                className="text-black md:mt-4 mt-2 md:text-sm text-xs text-justify tracking-wide leading-relaxed"
+                className="text-black md:mt-8 mt-2 md:text-sm text-xs text-justify tracking-wide leading-relaxed"
               >
                 We specialize in residential, commercial, institutional, and structural projects,
                 providing end-to-end solutions that ensure safety, efficiency, and client
@@ -122,13 +122,13 @@ export const About = () => {
                   scale: 1.03,
                   transition: { type: 'spring', stiffness: 160 },
                 }}
-                className="relative w-full h-72 lg:h-[300px] rounded-2xl overflow-hidden shadow-xl"
+                className="relative w-full  h-72 sm:h-96 lg:h-[390px] rounded-2xl overflow-hidden shadow-xl"
               >
                 <Image
                   src="/aboutus.jpg"
                   alt="Construction work"
                   fill
-                  className="object-fill"
+                  className="object-cover"
                   priority
                 />
               </motion.div>
