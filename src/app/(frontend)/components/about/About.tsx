@@ -125,7 +125,7 @@ export const About = () => {
                 className="relative w-full h-72 lg:h-[300px] rounded-2xl overflow-hidden shadow-xl"
               >
                 <Image
-                  src="/aboutus.png"
+                  src="/aboutus.jpg"
                   alt="Construction work"
                   fill
                   className="object-cover"

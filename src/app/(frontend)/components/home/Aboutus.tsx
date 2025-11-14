@@ -72,7 +72,7 @@ export const Aboutus = () => {
               }}
             >
               <Image
-                src="/aboutus.png"
+                src="/aboutus.jpg"
                 alt="Construction work"
                 fill
                 className="object-cover"

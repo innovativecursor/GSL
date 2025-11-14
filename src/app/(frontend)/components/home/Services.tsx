@@ -14,7 +14,7 @@ const services = [
     id: '02',
     title: 'Structural Steel Works & Fabrication',
     description:
-      'We provide engineering-grade structural steel solutions for large-scale projects.',
+      'We provide engineering-grade structural steel solutions for large-scale projects. Using licensed engineering software from Structural Design to Project Management software',
   },
   {
     id: '03',
