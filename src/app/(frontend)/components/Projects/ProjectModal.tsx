@@ -78,7 +78,7 @@ export default function ProjectModal({ project, onClose }: any) {
                   src={img?.image?.url || '/placeholder.png'}
                   alt={`${project.title} ${i + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-fill"
                 />
               </SwiperSlide>
             ))}
@@ -93,7 +93,7 @@ export default function ProjectModal({ project, onClose }: any) {
           </button>
         </div>
 
-        <div className="md:p-6 p-4 bg-white tracking-wide max-h-[60vh] overflow-y-auto">
+        <div className="md:p-6 p-4 bg-white tracking-wide max-h-[50vh] overflow-y-auto">
           <h2 className="md:text-xl font-bold text-black">{project.title}</h2>
           <p className="text-gray-700 text-sm md:mt-2 mt-1">
             Project Type: <span className="font-medium">{project.projectType}</span>

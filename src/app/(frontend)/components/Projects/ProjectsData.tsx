@@ -60,7 +60,7 @@ const ProjectCard = ({ project, onClick }: any) => {
           src={firstImage}
           alt={project?.title || 'Project Image'}
           fill
-          className="object-cover"
+          className="object-fill"
         />
         <p className="absolute top-3 left-3 bg-black/70 text-white text-xs font-medium px-2 py-0.5 rounded-full">
           {project?.category}
