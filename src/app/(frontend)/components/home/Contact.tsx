@@ -146,8 +146,7 @@ export default function Contact() {
                     <div>
                       <p className="text-xs font-medium mb-2">Main Office</p>
                       <p className="text-xs font-normal">
-                        Unit B, Emerald Jade Green Building, 282 Epifanio de los Santos Ave,
-                        Mandaluyong City, 1550 Metro Manila, Philippines
+                        Lot 4, Blk 3, Edgewood Place 1, Brgy. Inarawan, Antipolo City, Rizal 1870
                       </p>
                     </div>
                   </div>

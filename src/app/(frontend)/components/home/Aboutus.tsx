@@ -85,7 +85,7 @@ export const Aboutus = () => {
             variants={badgeVariant}
             className="absolute md:-bottom-10 -bottom-6 md:right-[-5%] right-0 bg-[#d6de23] text-gray-800 md:rounded-xl rounded-md shadow-xl md:p-5 p-3 text-center"
           >
-            <p className="md:text-3xl font-bold leading-none">12+</p>
+            <p className="md:text-3xl font-bold leading-none">16</p>
             <p className="md:text-xs text-[7px] font-medium mt-1">Years of Excellence</p>
           </motion.div>
         </motion.div>
@@ -130,7 +130,7 @@ export const Aboutus = () => {
           >
             <div className="flex items-end text-black gap-1">
               <Check className="w-3 h-3" />
-              Licensed Architects
+              Licensed Architects And Registered Civil Engineers
             </div>
             <div className="flex items-end text-black gap-1">
               <Check className="w-3 h-3" />

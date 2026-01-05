@@ -35,7 +35,7 @@ export const AllContactData = () => {
               <h4 className="font-semibold mt-2 md:text-lg">Mail</h4>
               <div className="md:w-32 w-16 h-[1px] mt-1 bg-black"></div>
             </div>
-            <p className="mt-3 text-xs font-semibold md:text-base">gslcdc.17256@gmail.com</p>
+            <p className="mt-3 text-xs font-semibold md:text-base">gslcdc.1725@gmail.com</p>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export const AllContactData = () => {
             <h4 className="font-semibold mt-2 md:text-lg">Mail</h4>
             <div className="w-32 h-[1px] mt-1 bg-black"></div>
           </div>
-          <p className="mt-3 text-xs font-semibold md:text-base">gslcdc.17256@gmail.com</p>
+          <p className="mt-3 text-xs font-semibold md:text-base">gslcdc.1725@gmail.com</p>
         </div>
 
         <div className="flex flex-col items-start mb-8 md:mb-0">
